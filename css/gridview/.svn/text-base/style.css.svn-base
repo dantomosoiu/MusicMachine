@@ -1,0 +1,63 @@
+/* tables */
+table.tablesorter {
+	font-family:tahoma;
+	margin:10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+	border-width: 0px 0px 0px 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+table.tablesorter td, table.tablesorter th {
+	border-width: 0px 1px 1px 0px;
+	border-style: solid;
+	border-color: gray;
+	}
+
+table.tablesorter thead tr {
+	background-image: url(header.png);
+	background-repeat: repeat-x;
+}
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	font-size: 8pt;
+	padding: 5px;
+}
+table.tablesorter thead tr .header {
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 4px;
+	vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(header-active.png);
+	background-repeat: repeat-x;
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(header-active.png);
+	background-repeat: repeat-x;
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #2489c6;
+}
+
+	
+table.tablesorter tbody tr:hover {
+	background-color: #d6ebf8;
+	}
+	
+table.tablesorter div.inlinePlaylistDiv {
+    display: inline-block;
+    min-width: 90px;
+    max-height: 65px;
+}	

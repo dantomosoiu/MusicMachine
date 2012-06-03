@@ -1,0 +1,55 @@
+﻿
+#friends_infoTable td{
+padding: 3px;
+}
+
+#friends_infoTable {
+	background-color: #f2f2f2;
+	min-width: 300px;
+	padding: 10px;
+	}
+	
+	#friends_infoTable tr td:first-child 
+	{
+	    width: 120px;
+	}
+
+#friends_infoTable tr td:first-child {
+	vertical-align: top;
+}
+
+#friends_infoTable td span {
+	display: block;
+	padding: 4px;
+}
+
+.friends_genres .friends_input, .friends_artists .friends_input {
+	display: block;
+}
+
+.friends_info {
+	font-size: 12px;
+	padding: 2px 5px;
+	}
+
+#friends_header 
+{
+    padding: 0px 0px 5px 0px;
+    border-bottom: 1px solid gray;
+}
+
+img.shoutbox_message_delete 
+{
+    float: right;
+}
+
+#friends_request 
+{
+    float: right;
+}
+
+#friends_shoutbox_textarea, #friends_shoutbox_post_title 
+{
+    border: 1px solid gray;
+}
+    

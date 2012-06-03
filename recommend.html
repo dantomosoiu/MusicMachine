@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Recommend Song</title>
+		<script type="text/javascript" src="js/jquery-1.5.1.js"></script>
+        <style type='text/css'>
+			body {
+				font-family: tahoma;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<h2>Recommend a song</h2>
+		<h3 id="song_title"></h3>
+		<p id = "friend_list_p">Recommend to
+			<select id="friend_list">
+			</select>
+		</p>
+		<input type="button" value="OK" id="recommend_button"/>
+        <script type="text/javascript">
+            $("#song_title").html(window.opener.RecommendObject.songTitle);
+            $("#recommend_button").click(function () {
+                opener.RecommendObject.postRecommend($("select option:selected").attr("value"), window);
+                //window.close();
+            });
+            if (typeof opener.RecommendObject.friendList == 'string') {
+                $("#friend_list_p").html("You don't have any friends");
+                $("#recommend_button").click(function () {
+                    window.close();
+                });
+            } else {
+                for (i in opener.RecommendObject.friendList) {
+                    friend = opener.RecommendObject.friendList[i];
+                    $("#friend_list").append($("<option></option>").attr("value", friend.UserId).html(friend.FirstName + " " + friend.LastName));
+                }
+            }
+            
+        </script>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/playlist-conservadecod/!svn/ver/124/trunk/MusicMachine/App_Code/Serializable/Database
+END
+ReportedSong.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/playlist-conservadecod/!svn/ver/124/trunk/MusicMachine/App_Code/Serializable/Database/ReportedSong.cs
+END
+BasicInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/playlist-conservadecod/!svn/ver/14/trunk/MusicMachine/App_Code/Serializable/Database/BasicInfo.cs
+END
+ShoutboxEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/playlist-conservadecod/!svn/ver/100/trunk/MusicMachine/App_Code/Serializable/Database/ShoutboxEntry.cs
+END
+PersonalInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/playlist-conservadecod/!svn/ver/65/trunk/MusicMachine/App_Code/Serializable/Database/PersonalInfo.cs
+END
+SongCount.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/playlist-conservadecod/!svn/ver/83/trunk/MusicMachine/App_Code/Serializable/Database/SongCount.cs
+END
+ExtendedPersonalInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/playlist-conservadecod/!svn/ver/47/trunk/MusicMachine/App_Code/Serializable/Database/ExtendedPersonalInfo.cs
+END
+UserRole.cs
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/playlist-conservadecod/!svn/ver/20/trunk/MusicMachine/App_Code/Serializable/Database/UserRole.cs
+END
+FriendRequest.cs
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/playlist-conservadecod/!svn/ver/25/trunk/MusicMachine/App_Code/Serializable/Database/FriendRequest.cs
+END
+Playlist.cs
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/playlist-conservadecod/!svn/ver/20/trunk/MusicMachine/App_Code/Serializable/Database/Playlist.cs
+END
+SongInfo.cs
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/playlist-conservadecod/!svn/ver/38/trunk/MusicMachine/App_Code/Serializable/Database/SongInfo.cs
+END
+FeedEntry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/playlist-conservadecod/!svn/ver/24/trunk/MusicMachine/App_Code/Serializable/Database/FeedEntry.cs
+END
+Lyrics.cs
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/playlist-conservadecod/!svn/ver/20/trunk/MusicMachine/App_Code/Serializable/Database/Lyrics.cs
+END
+RecommendedSong.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/playlist-conservadecod/!svn/ver/20/trunk/MusicMachine/App_Code/Serializable/Database/RecommendedSong.cs
+END
+ReportedMessage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/playlist-conservadecod/!svn/ver/20/trunk/MusicMachine/App_Code/Serializable/Database/ReportedMessage.cs
+END

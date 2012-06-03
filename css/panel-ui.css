@@ -1,0 +1,302 @@
+BODY {
+	font-family: tahoma;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	min-width:1014px;
+}
+
+* {
+	border: 0;
+}
+
+#panels_container {
+	height: 350px;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #aaa9a9;
+	border-bottom: 1px solid #aaa9a9;
+	overflow: hidden;
+}
+DIV.panel {
+	float: left;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+}
+DIV.panel H2 {
+	font-size: 28px;
+	font-weight: normal;
+	padding: 0px;
+	margin: 0px 0px 10px 5px;
+	cursor: w-resize;
+}
+DIV.panel_compacted {
+	background-color: #f2f1f1;
+	border-left: 1px solid #d1d0d0;
+}
+DIV.panel_compacted:hover {
+	background-color: #f9f7f7;
+}
+DIV.panel_compacted:hover H2 {
+	color: #807f7f;
+}
+DIV.panel_compacted H2 {
+	color: #aaa9a9;
+}
+DIV.panel_compacted DIV.content {
+	margin: 0px 5px;
+	padding: 0px;
+	color: #676767;
+}
+
+DIV.panel_extended {
+	background-color: white;
+	border-left: 1px solid #b5b4b4;
+	border-right: 1px solid #b5b4b4;
+}
+DIV.panel_extended DIV.content {
+	margin: 0px 5px;
+	padding: 0px;
+	color: black;
+}
+DIV.panel_extended H2 {
+	color: #4b4b4b;
+}
+DIV.panel_close_button {
+	float: right;
+	padding: 0px;
+	margin: 0px;
+	margin-top: 10px;
+	margin-right: 10px;
+	width: 13px;
+	height: 13px;
+	cursor: pointer;
+}
+
+DIV.panel H3 {
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0px 0px 10px;
+	padding: 0px;
+}
+DIV.panel H3 IMG {
+	vertical-align: top;
+}
+
+DIV.panel H4 {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+}
+DIV.panel_compacted A {
+	color: #67b9ff;
+	text-decoration: none;
+}
+DIV.panel_compacted A:hover {
+	color: #67b9ff;
+	text-decoration: underline;
+}
+DIV.panel_extended A {
+	color: #1c52ff;
+	text-decoration: none;
+}
+DIV.panel_extended A:hover {
+	color: #1c52ff;
+	text-decoration: underline;
+}
+DIV.panel UL {
+	list-style-type: none;
+	margin: 0px 0px 5px;
+	padding: 0px;
+}
+DIV.panel UL LI {
+	margin: 0px;
+	padding: 0px;
+}
+DIV.panel UL.oneline {
+	list-style-type: none;
+	margin: 0px 0px 5px;
+	padding: 0px;
+}
+DIV.panel UL.oneline LI {
+	margin: 0px;
+	padding: 0px;
+	height: 1.3em;
+	overflow: hidden;
+}
+DIV.panel DIV.column {
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	margin-right: 30px;
+}
+DIV.panel DIV.column-menu {
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	margin-right: 20px;
+}
+DIV.panel DIV.column-menu A IMG {
+	border: 0px;
+	vertical-align: top;
+}
+DIV.panel DIV.column-menu A {
+	display: block;
+	padding: 5px;
+	color: black;
+	text-decoration: none;
+}
+DIV.panel DIV.column-menu A:hover {
+	color: black;
+	text-decoration: none;
+	background-color: #ebebec;
+}
+DIV.panel DIV.column-menu A.selected {
+	display: block;
+	padding: 5px;
+	color: black;
+	text-decoration: none;
+	border-bottom: 1px solid #b0b0b1;
+	background-color: #e1e1e2;
+}
+DIV.panel DIV.column-menu A.selected:hover {
+	color: black;
+	text-decoration: none;
+	background-color: #ebebec;
+	border-bottom: 1px solid #b0b0b1;
+}
+DIV.panel DIV.button_toolbar {
+	margin-bottom: 10px;
+}
+DIV.panel DIV.button_toolbar A {
+	color: black;
+}
+DIV.panel DIV.button_toolbar A:hover {
+	color: white;
+}
+DIV.panel DIV.gridview_container {
+	margin: 10px 0px;
+}
+DIV.panel DIV.gridview_container TABLE.gridview {
+	text-align: left;
+	border: 1px solid #dfdfe0;
+}
+DIV.panel DIV.gridview_container TABLE.gridview THEAD {
+	background-image: url(../images/gridview-header.png);
+	background-repeat: repeat-x;
+	height: 24px;
+}
+DIV.panel DIV.gridview_container TABLE.gridview THEAD TH {
+	font-weight: bold;
+	padding: 5px;
+}
+DIV.panel DIV.gridview_container TABLE.gridview TR:hover TD {
+	background-color: #f1f1f2;
+}
+DIV.panel DIV.gridview_container TABLE.gridview TR TD {
+	padding: 5px;
+	border-top: 1px solid #f1f1f2;
+}
+
+DIV.panel DIV.scroll_vertical {
+	overflow-y: auto;
+}
+
+DIV.panel DIV.scroll_horizontal 
+{
+    overflow-x: auto;
+}
+DIV.panel IMG.vertical_align_top {
+	vertical-align: top;
+	border: 0px;
+}
+DIV.panel DIV.shoutbox {
+	margin: 0px;
+	margin-top: 10px;
+	padding: 0px;
+}
+DIV.panel DIV.shoutbox DIV.message_container {
+	padding: 0px;
+	margin: 15px;
+	margin-top: 20px;
+	border: 1px solid #c6c6c7;
+}
+DIV.panel DIV.shoutbox DIV.message_container DIV.message_header {
+	background-color: #ededee;
+	border-bottom: 1px solid #c6c6c7;
+	padding: 5px;
+}
+DIV.panel DIV.shoutbox DIV.message_container DIV.message_header IMG.avatar {
+	float: left;
+	position: relative;
+	left: -10px;
+	top: -10px;
+}
+DIV.panel DIV.shoutbox DIV.message_container DIV.message_content {
+	padding: 10px;
+}
+DIV.panel DIV.shoutbox_compacted {
+	margin: 10px 0px;
+	padding: 0px;
+}
+DIV.panel DIV.shoutbox_compacted DIV.message_container {
+	padding: 0px;
+	margin: 15px;
+	margin-top: 20px;
+	border: 1px solid #c6c6c7;
+}
+DIV.panel DIV.shoutbox_compacted DIV.message_container DIV.message_header {
+	background-color: #dadadb;
+	border-bottom: 1px solid #c6c6c7;
+	padding: 5px;
+	font-weight: bold;
+}
+DIV.panel DIV.shoutbox_compacted DIV.message_container DIV.message_content {
+	padding: 5px;
+}
+
+DIV.panel DIV.form_container {
+	padding: 0px;
+	margin: 10px 0px;
+}
+DIV.panel DIV.form_container DIV.row {
+	padding: 0px;
+	margin: 10px 0px;
+}
+DIV.panel DIV.form_container DIV.row INPUT {
+	border: 1px solid #89898a;
+	display: block;
+}
+DIV.panel DIV.form_container DIV.row SELECT {
+	border: 1px solid #89898a;
+	display: block;
+}
+DIV.panel DIV.form_container DIV.submit {
+	padding: 0px;
+	margin: 10px 0px;
+}
+
+DIV.panel DIV.oneline_form_container {
+	padding: 0px;
+	margin: 10px 0px;
+}
+DIV.panel DIV.oneline_form_container DIV.row {
+	padding: 0px;
+	margin: 10px 0px;
+	clear: both;
+}
+DIV.panel DIV.oneline_form_container DIV.row INPUT {
+	border: 1px solid #89898a;
+	float: right;
+	margin-left: 5px;
+	width: 65%;
+}
+DIV.panel DIV.oneline_form_container DIV.submit {
+	padding: 0px;
+	margin: 10px 0px;
+}
+DIV.panel SELECT.most_played_list {
+	border: 1px solid #89898a;
+}

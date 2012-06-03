@@ -1,0 +1,31 @@
+#header {
+	background-color: #e9e9e9;
+	height: 50px;
+	text-align: center;
+}
+
+#image_header {
+	float: left;
+	padding: 10px;
+	margin: 0px;
+}
+
+#header_search {
+	display: inline;
+	margin: auto;
+	position: relative;
+	top: 12px;
+}
+
+#header_user_status {
+	float: right;
+	text-align: left;
+	position: relative;
+	padding: 5px;
+}
+#ajax_loading_img 
+{
+    float: left;
+    visibility: hidden;
+    margin-top: 7px;   
+}

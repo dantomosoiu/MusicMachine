@@ -1,0 +1,55 @@
+BODY {
+	margin: 0px auto;
+	padding: 0px;
+	font-family: tahoma;
+	font-size: 12px;
+	width: 800px;
+}
+
+#header {
+	width: 250px;
+}
+#header H1 {
+	margin: 0px;
+	margin-top: 20px;
+	padding: 0px;
+	font-size: 24px;
+	font-weight: normal;
+}
+#header DIV.header_options {
+	float: right;
+	margin-top: 7px;
+}
+DIV.search {
+	margin: 15px 0px;
+}
+DIV.search INPUT[type="text"] {
+	width: 300px;
+}
+
+DIV.gridview_container {
+	margin: 10px 0px;
+}
+DIV.gridview_container TABLE.gridview {
+	text-align: left;
+	border: 1px solid #dfdfe0;
+}
+DIV.gridview_container TABLE.gridview THEAD {
+	background-image: url(../images/gridview-header.png);
+	background-repeat: repeat-x;
+	height: 24px;
+}
+DIV.gridview_container TABLE.gridview THEAD TH {
+	font-weight: bold;
+	padding: 5px;
+}
+DIV.gridview_container TABLE.gridview TR:hover TD {
+	background-color: #f1f1f2;
+}
+DIV.gridview_container TABLE.gridview TR TD {
+	padding: 5px;
+	border-top: 1px solid #f1f1f2;
+}
+DIV.gridview_container TABLE.gridview TR TD.centered {
+	text-align: center;
+}

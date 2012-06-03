@@ -1,0 +1,366 @@
+﻿function PlaylistsClass() {
+
+    this.__load = function () {
+        Panels.extend('playlists');
+
+
+
+    }
+
+    this.index = function () {
+<<<<<<< .mine
+        
+=======
+        this.changeContent();
+    }
+
+>>>>>>> .r25
+
+    playlistColumnArray = [{ columnId: 'SongName', columnTitle: 'Song' }, { columnId: 'Artists', columnTitle: 'Artist' }, { columnId: 'Album', columnTitle: 'Album' }, { columnId: 'Year', columnTitle: 'Year' }, { columnId: 'Genres', columnTitle: 'Genres' }, { columnId: 'action', columnTitle: 'Action' }, { columnId: 'position', columnTitle: 'Position'}];
+    playlistDataArray = [];
+    playlistSongs = [];
+    PlayId = "";
+
+    
+
+    this.changeContent = function () {
+        userInfo = {
+            UserId: Mm.session.userId,
+            FirstName: "gogu",
+            LastName: "steliade",
+            Email: "qweqew"
+
+        };
+
+
+        $.post("PlaylistPanel.ashx", userInfo, function (response) {
+            if (Mm.checkAppState(response) == true) {
+                var text_html = "<ul class='list_playlists'>";
+                text_html += '<li><a id="NewButtonAnchor" href="javascript:void(0)" onclick = "playlists.newPlaylist();"><img src="images/plus-circle.png" alt=""> New Playlist</a></li>';
+
+                for (i = 0; i < response.length; i++) {
+                    text_html += ' <li><a id="playlist' + response[i].PlaylistId + '" href="javascript:void(0)" onclick ="playlists.showSongs(' + response[i].PlaylistId + ')">' + response[i].PlaylistName + '</a></li>';
+                }
+                text_html += "</ul>";
+                $('.column-menu').html(text_html);
+
+
+            }
+        }, "json");
+
+    }
+
+    
+
+    this.updateCompacted = function () {
+        newHtml = "<h4>" + PlayId + " ";
+        newHtml += '</h4> <ul class="oneline">';
+
+        for (j = 0; j < playlistSongs.length; j++) {
+            newHtml = newHtml + '<li><a href="javascript:void(0)">' + playlistSongs[j].songObj.SongName + ' - ' + playlistSongs[j].songObj.Artists + '</a></li>\n';
+        }
+        newHtml = newHtml + ' </ul>\n ';
+        panelPlaylists.setCompactedHtml(newHtml);
+    }
+
+    this.showSongs = function (PlayId) {
+
+        songInfo = { PlaylistId: PlayId };
+
+        $.post("PlaylistSongsPanel.ashx", songInfo, function (response) {
+            if (Mm.checkAppState(response) == true) {
+                playlistDataArray = [];
+                playlistSongs = [];
+
+
+                if (response != undefined) {
+                    for (i = 0; i < response.length; i++) {
+                        playlistSongs[i] = { songObj: response[i], playlistPosition: i };
+                        playlistDataArray[i] = { SongName: response[i].SongName, Artists: response[i].Artists, Album: response[i].Album, Year: response[i].Year, Genres: response[i].Genres, action: { content: '<img src="images/delete_gridview_song.png" onClick="playlists.deletePlaylistSong(' + i + ');"> <img src="images/promote_gridview_song.png" onClick="playlists.promotePlaylistSong(' + i + ');"> <img src="images/demote_gridview_song.png" onClick="playlists.demotePlaylistSong(' + i + ');"> <img src="images/to_queue_gridview_song.png" onClick="playlists.toQueuePlaylistSong(' + i + ');">', type: 'html' }, position: i };
+                    }
+                }
+
+                playlistGridview = new Gridview(playlistColumnArray, playlistDataArray, 'playlist_gridview');
+                $("#playlist_gridview_container").html(playlistGridview.getGridviewHtml());
+                playlistGridview.activate();
+
+                document.getElementById("RemoveButtonAnchor").onclick = function () { playlists.deletePlaylist(PlayId) };
+                document.getElementById("AddToQueueButtonAnchor").onclick = function () { playlists.addPlaylistToQueue() };
+                document.getElementById("SavePlaylistButtonAnchor").onclick = function () { playlists.savePlaylist(PlayId) };
+                document.getElementById("RenamePlaylistButtonAnchor").onclick = function () { playlists.renamePlaylist(PlayId) };
+
+
+            }
+        }, "json");
+
+        playlists.updateCompacted();
+    }
+
+    this.deletePlaylistSong = function (position) {
+
+        for (i = 0; i < playlistSongs.length; i++) {
+            if (playlistSongs[i].playlistPosition == position) {
+                playlistSongs.splice(i, 1);
+                break;
+            }
+        }
+
+
+        playlistDataArray = [];
+        for (i = 0; i < playlistSongs.length; i++) {
+            playlistSongs[i].playlistPosition = i;
+            playlistDataArray[i] = { SongName: playlistSongs[i].songObj.SongName, Artists: playlistSongs[i].songObj.Artists, Album: playlistSongs[i].songObj.Album, Year: playlistSongs[i].songObj.Year, Genres: playlistSongs[i].songObj.Genres, action: { content: '<img src="images/delete_gridview_song.png" onClick="playlists.deletePlaylistSong(' + i + ');"> <img src="images/promote_gridview_song.png" onClick="playlists.promotePlaylistSong(' + i + ');"> <img src="images/demote_gridview_song.png" onClick="playlists.demotePlaylistSong(' + i + ');"> <img src="images/to_queue_gridview_song.png" onClick="playlists.toQueuePlaylistSong(' + i + ');">', type: 'html' }, position: playlistSongs[i].playlistPosition };
+        }
+
+        playlistGridview = new Gridview(playlistColumnArray, playlistDataArray, 'playlist_gridview');
+        $("#playlist_gridview_container").html(playlistGridview.getGridviewHtml());
+        playlistGridview.activate();
+        playlists.updateCompacted();
+
+    }
+
+    this.promotePlaylistSong = function (position) {
+
+        if (position == 0)
+            return;
+
+        aux = playlistSongs.splice(position, 1);
+        playlistSongs.splice(position - 1, 0, aux[0]);
+
+        playlistDataArray = [];
+        for (i = 0; i < playlistSongs.length; i++) {
+            playlistSongs[i].playlistPosition = i;
+            playlistDataArray[i] = { SongName: playlistSongs[i].songObj.SongName, Artists: playlistSongs[i].songObj.Artists, Album: playlistSongs[i].songObj.Album, Year: playlistSongs[i].songObj.Year, Genres: playlistSongs[i].songObj.Genres, action: { content: '<img src="images/delete_gridview_song.png" onClick="playlists.deletePlaylistSong(' + i + ');"> <img src="images/promote_gridview_song.png" onClick="playlists.promotePlaylistSong(' + i + ');"> <img src="images/demote_gridview_song.png" onClick="playlists.demotePlaylistSong(' + i + ');"> <img src="images/to_queue_gridview_song.png" onClick="playlists.toQueuePlaylistSong(' + i + ');">', type: 'html' }, position: playlistSongs[i].playlistPosition };
+        }
+
+        playlistGridview = new Gridview(playlistColumnArray, playlistDataArray, 'playlist_gridview');
+        $("#playlist_gridview_container").html(playlistGridview.getGridviewHtml());
+        playlistGridview.activate();
+        playlists.updateCompacted();
+
+    }
+
+    this.demotePlaylistSong = function (position) {
+
+        if (position == playlistSongs.length - 1)
+            return;
+
+        aux = playlistSongs.splice(position + 1, 1);
+        playlistSongs.splice(position, 0, aux[0]);
+
+        playlistDataArray = [];
+        for (i = 0; i < playlistSongs.length; i++) {
+            playlistSongs[i].playlistPosition = i;
+            playlistDataArray[i] = { SongName: playlistSongs[i].songObj.SongName, Artists: playlistSongs[i].songObj.Artists, Album: playlistSongs[i].songObj.Album, Year: playlistSongs[i].songObj.Year, Genres: playlistSongs[i].songObj.Genres, action: { content: '<img src="images/delete_gridview_song.png" onClick="playlists.deletePlaylistSong(' + i + ');"> <img src="images/promote_gridview_song.png" onClick="playlists.promotePlaylistSong(' + i + ');"> <img src="images/demote_gridview_song.png" onClick="playlists.demotePlaylistSong(' + i + ');"> <img src="images/to_queue_gridview_song.png" onClick="playlists.toQueuePlaylistSong(' + i + ');">', type: 'html' }, position: playlistSongs[i].playlistPosition };
+        }
+
+        playlistGridview = new Gridview(playlistColumnArray, playlistDataArray, 'playlist_gridview');
+        $("#playlist_gridview_container").html(playlistGridview.getGridviewHtml());
+        playlistGridview.activate();
+        playlists.updateCompacted();
+    }
+
+    this.toQueuePlaylistSong = function (position) {
+        for (i = 0; i < playlistSongs.length; i++) {
+            if (playlistSongs[i].playlistPosition == position) {
+                rightQueue.add(playlistSongs[i].songObj);
+                break;
+            }
+        }
+    }
+
+    //
+    // functia publica de adaugare - se apeleaza cu playlists.addSongToPlaylist(song_json);
+    //
+
+    this.addSongToPlaylist = function (obj) {
+        l = playlistSongs.length;
+        newSong = { songObj: obj, playlistPosition: l };
+        playlistSongs[l] = newSong;
+
+        playlistDataArray = [];
+        for (int = 0; i < playlistSongs.length; i++) {
+            playlistSongs[i].playlistPosition = i;
+            playlistDataArray[i] = { SongName: playlistSongs[i].songObj.SongName, Artists: playlistSongs[i].songObj.Artists, Album: playlistSongs[i].songObj.Album, Year: playlistSongs[i].songObj.Year, Genres: playlistSongs[i].songObj.Genres, action: { content: '<img src="images/delete_gridview_song.png" onClick="playlists.deletePlaylistSong(' + i + ');"> <img src="images/promote_gridview_song.png" onClick="playlists.promotePlaylistSong(' + i + ');"> <img src="images/demote_gridview_song.png" onClick="playlists.demotePlaylistSong(' + i + ');"> <img src="images/to_queue_gridview_song.png" onClick="playlists.toQueuePlaylistSong(' + i + ');">', type: 'html' }, position: playlistSongs[i].playlistPosition };
+        }
+
+        playlistGridview = new Gridview(playlistColumnArray, playlistDataArray, 'playlist_gridview');
+        $("#playlist_gridview_container").html(playlistGridview.getGridviewHtml());
+        playlistGridview.activate();
+        playlists.updateCompacted();
+
+    }
+
+    this.addPlaylistToQueue = function () {
+
+        for (i = 0; i < playlistSongs.length; i++) {
+            rightQueue.add(playlistSongs[i].songObj);
+        }
+
+    }
+
+
+    this.newPlaylist = function () {
+        $(".list_playlists").append("<input id='new_playlist_name' type='text' size='10' value='New playlist'>");
+        $("#new_playlist_name").focus();
+        $("#new_playlist_name").select();
+
+        $("#new_playlist_name").focusout(function () {
+
+
+            if ($('#new_playlist_name').val().length < 1) {
+                $('#new_playlist_name').val("New Playlist");
+            }
+            alert(2);
+            playlistInfo = {
+                PlaylistName: $('#new_playlist_name').val(),
+                UserId: Mm.session.userId
+            };
+
+
+            $.post("PlaylistInsert.ashx", playlistInfo, function (response) {
+                if (Mm.checkAppState(response) == true) {
+                    playlists.changeContent();
+                }
+            }, "json");
+
+
+            playlistDataArray = [];
+            playlistSongs = [];
+
+            playlistGridview = new Gridview(playlistColumnArray, playlistDataArray, 'playlist_gridview');
+            $("#playlist_gridview_container").html(playlistGridview.getGridviewHtml());
+            playlistGridview.activate();
+            playlists.updateCompacted();
+        });
+
+    }
+
+    this.deletePlaylist = function (PlayId) {
+
+        playlistInfo = { PlaylistId: PlayId };
+
+        $.post("PlaylistDelete.ashx", playlistInfo, function (response) {
+            if (Mm.checkAppState(response) == true) {
+                playlists.changeContent();
+                $("#playlist_gridview_container").html("");
+            }
+        }, "json");
+        playlists.updateCompacted();
+
+    }
+
+    this.renamePlaylist = function (PlayId) {
+
+
+        oldName = $("#playlist"+ PlayId + "").html();
+        oldLi = $("#playlist" + PlayId + "").replaceWith('<input id="rename_playlist" type="text" size="10" value="' + $("#playlist" + PlayId + "").html() + '"/>');
+
+        ignore = 0;
+
+        $("#rename_playlist").focus();
+        $("#rename_playlist").select();
+
+        $("#rename_playlist").focusout(function () {
+
+            if ($('#rename_playlist').val().length < 1) {
+                ignore = 1;
+            }
+
+            newName = $("#rename_playlist").val();
+            $("#rename_playlist").replaceWith(oldLi);
+            ($("#playlist" + PlayId + "").html(newName));
+
+            if (ignore == 1) {
+                newName = oldName;
+            }
+
+
+            playlistInfo = { PlaylistId: PlayId,
+                PlaylistName: newName
+            };
+
+            $.post("PlaylistRename.ashx", playlistInfo, function (response) {
+                if (Mm.checkAppState(response) == true) {
+                    playlists.changeContent();
+                }
+            }, "json");
+
+        });
+        playlists.updateCompacted();
+    }
+
+    this.savePlaylist = function (PlayId) {
+
+        vectorSongIds = [];
+        vectorPlaylistPositions = [];
+
+        for (i = 0; i < playlistSongs.length; i++) {
+            vectorSongIds[i] = playlistSongs[i].songObj.SongId;
+            vectorPlaylistPositions[i] = playlistSongs[i].playlistPosition;
+        }
+
+        alert(3);
+        playlistInfo = {
+            PlaylistId: PlayId,
+            SongIds: vectorSongIds,
+            PlaylistPositions: vectorPlaylistPositions,
+            UserId: Mm.session.userId
+        };
+
+
+        $.post("PlaylistSaveDelete.ashx", playlistInfo, function (response) {
+            if (Mm.checkAppState(response) == true) {
+
+                $.post("PlaylistSave.ashx", playlistInfo, function (response) {
+                    if (Mm.checkAppState(response) == true) {
+                        playlists.changeContent();
+                    }
+                }, "json");
+
+            }
+        }, "json");
+
+    }
+
+    this.testare = function () {
+        ghostSong = [];
+
+        for (i = 1; i < 5; i++) {
+            ghostSong[i] = { songObj: { SongId: i, Artists: "GhostArtist" + i, SongName: "GhostSong" + i, Year: 1990 + i, Genre: "manea" + i, Duration: "3:0" + i} };
+            playlists.addSongToPlaylist(ghostSong[i].songObj);
+        }
+    }
+
+};
+
+
+
+
+//var playlists = new PlaylistsClass();
+
+var panelPlaylists = new Panel('Playlists', 'playlists', false);
+
+panelPlaylists.setExtendedHtml('<div class="column-menu">\n\
+									</div>\n\
+									<div class="column">\n\
+										<div id="buttons_toolbar" class="button_toolbar">\n\
+											<a id= "SavePlaylistButtonAnchor" href="javascript:void(0)" class="button">Save Playlist</a>\n\
+											<a id="AddToQueueButtonAnchor" href="javascript:void(0)" class="button">Add to Queue</a>\n\
+											<a id="RemoveButtonAnchor" href="javascript:void(0)" class="button">Remove Playlist</a>\n\
+                                            <a id="RenamePlaylistButtonAnchor" href="javascript:void(0)" class="button">Rename Playlist</a>\n\
+										</div>\n\
+										<div id="playlist_gridview_container" class="gridview_container">\n\
+										</div>\n\
+									</div>');
+
+
+panelPlaylists.setCompactedHtml('<h4>Current playlist</h4>\n\
+										<ul class="oneline">\n\
+											<li><a href="javascript:void(0)">Rosenrot - Rammstein</a></li>\n\
+											<li><a href="javascript:void(0)">Mein Teil - Rammsteing</a></li>\n\
+											<li><a href="javascript:void(0)">Mein Hertz Brennt - Rammstein</a></li>\n\
+											<li><a href="javascript:void(0)">Streamline - System of a Down</a></li>\n\
+											<li><a href="javascript:void(0)">Unforgiven - Metallica</a></li>\n\
+										</ul>\n\
+                                        ');

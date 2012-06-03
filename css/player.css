@@ -1,0 +1,1158 @@
+BODY {
+	font-family: tahoma;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	overflow-y:hidden;
+}
+
+* {
+	border: 0;
+}
+
+#queue_container {
+	height: 200px;
+	width:100%;
+	bottom: 2 px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	bottom: 0px;
+	min-width: 760px;
+}
+
+DIV#queue_container DIV.song_container_left{
+	display:inline-block;
+	width:96px;
+	height: 138px;
+	text-align:center;
+	vertical-align:middle;
+	margin: 0px 2px;
+	padding: 0px;
+	overflow:hidden;
+	float:right;
+}
+
+DIV#queue_container DIV.song_container_right{
+	display:inline-block;
+	width:96px;
+	height: 138px;
+	text-align:center;
+	vertical-align:middle;
+	margin: 0px 2px;
+	padding: 0px;
+	overflow:hidden;
+	float:left;
+}
+
+DIV#queue_container DIV.song_container_left:hover DIV.song_container_buttons {
+	visibility: visible;
+}
+
+DIV#queue_container DIV.song_container_right:hover DIV.song_container_buttons {
+	visibility: visible;
+}
+
+DIV#queue_container DIV.song_container_cover{
+	width:64px;
+	height:64px;
+	margin: 0px 16px 3px 16px;
+}
+
+DIV#queue_container DIV.song_container_buttons{
+	width:100%;
+	height:16px;
+	visibility: hidden;
+	top:0px;
+
+}
+
+DIV#queue_container DIV#player_middle_middle DIV.song_container_buttons{
+    position:absolute;
+    top:0px;
+    z-index:5;
+}
+
+DIV#queue_container DIV.song_container_artist{
+
+}
+
+DIV#queue_container DIV.song_container_song{
+
+}
+
+DIV#queue_container DIV.buton_queue_left_1{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/1.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_1:hover{
+	background-image:url('../images/queue/1_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_1:active{
+	background-image:url('../images/queue/1_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_1_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/1_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_1_pressed:hover{
+	background-image:url('../images/queue/1_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_1_pressed:active{
+	background-image:url('../images/queue/1_voted.png');
+}
+
+
+DIV#queue_container DIV.buton_queue_left_2{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/2.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_2:hover{
+	background-image:url('../images/queue/2_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_2:active{
+	background-image:url('../images/queue/2_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_2_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/2_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_2_pressed:hover{
+	background-image:url('../images/queue/2_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_2_pressed:active{
+	background-image:url('../images/queue/2_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_3{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/3.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_3:hover{
+	background-image:url('../images/queue/3_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_3:active{
+	background-image:url('../images/queue/3_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_3_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/3_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_3_pressed:hover{
+	background-image:url('../images/queue/3_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_3_pressed:active{
+	background-image:url('../images/queue/3_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_4{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/4.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_4:hover{
+	background-image:url('../images/queue/4_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_4:active{
+	background-image:url('../images/queue/4_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_4_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/4_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_4_pressed:hover{
+	background-image:url('../images/queue/4_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_4_pressed:active{
+	background-image:url('../images/queue/4_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_5{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/5.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_5:hover{
+	background-image:url('../images/queue/5_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_5:active{
+	background-image:url('../images/queue/5_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_5_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/5_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_left_5_pressed:hover{
+	background-image:url('../images/queue/5_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_5_pressed:active{
+	background-image:url('../images/queue/5_voted.png');
+}
+
+
+DIV#queue_container DIV.buton_queue_left_6{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/remove.png');
+	float:left;
+
+}
+
+DIV#queue_container DIV.buton_queue_left_6:hover{
+	background-image:url('../images/queue/remove_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_left_6:active{
+	background-image:url('../images/queue/remove_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_1{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/1.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_1:hover{
+	background-image:url('../images/queue/1_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_1:active{
+	background-image:url('../images/queue/1_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_1_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/1_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_1_pressed:hover{
+	background-image:url('../images/queue/1_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_1_pressed:active{
+	background-image:url('../images/queue/1_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_2{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/2.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_2:hover{
+	background-image:url('../images/queue/2_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_2:active{
+	background-image:url('../images/queue/2_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_2_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/2_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_2_pressed:hover{
+	background-image:url('../images/queue/2_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_2_pressed:active{
+	background-image:url('../images/queue/2_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_3{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/3.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_3:hover{
+	background-image:url('../images/queue/3_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_3:active{
+	background-image:url('../images/queue/3_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_3_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/3_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_3_pressed:hover{
+	background-image:url('../images/queue/3_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_3_pressed:active{
+	background-image:url('../images/queue/3_voted.png');
+}
+
+
+DIV#queue_container DIV.buton_queue_right_4{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/4.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_4:hover{
+	background-image:url('../images/queue/4_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_4:active{
+	background-image:url('../images/queue/4_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_4_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/4_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_4_pressed:hover{
+	background-image:url('../images/queue/4_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_4_pressed:active{
+	background-image:url('../images/queue/4_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_5{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/5.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_5:hover{
+	background-image:url('../images/queue/5_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_5:active{
+	background-image:url('../images/queue/5_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_5_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/5_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_right_5_pressed:hover{
+	background-image:url('../images/queue/5_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_5_pressed:active{
+	background-image:url('../images/queue/5_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_6{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/remove.png');
+	float:left;
+
+}
+
+DIV#queue_container DIV.buton_queue_right_6:hover{
+	background-image:url('../images/queue/remove_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_right_6:active{
+	background-image:url('../images/queue/remove_active.png');
+}
+
+
+DIV#queue_container DIV.buton_queue_mid_1{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/1.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_1:hover{
+	background-image:url('../images/queue/1_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_1:active{
+	background-image:url('../images/queue/1_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_1_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/1_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_1_pressed:hover{
+	background-image:url('../images/queue/1_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_1_pressed:active{
+	background-image:url('../images/queue/1_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_2{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/2.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_2:hover{
+	background-image:url('../images/queue/2_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_2:active{
+	background-image:url('../images/queue/2_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_2_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/2_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_2_pressed:hover{
+	background-image:url('../images/queue/2_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_2_pressed:active{
+	background-image:url('../images/queue/2_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_3{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/3.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_3:hover{
+	background-image:url('../images/queue/3_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_3:active{
+	background-image:url('../images/queue/3_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_3_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/3_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_3_pressed:hover{
+	background-image:url('../images/queue/3_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_3_pressed:active{
+	background-image:url('../images/queue/3_voted.png');
+}
+
+
+DIV#queue_container DIV.buton_queue_mid_4{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/4.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_4:hover{
+	background-image:url('../images/queue/4_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_4:active{
+	background-image:url('../images/queue/4_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_4_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/4_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_4_pressed:hover{
+	background-image:url('../images/queue/4_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_4_pressed:active{
+	background-image:url('../images/queue/4_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_5{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/5.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_5:hover{
+	background-image:url('../images/queue/5_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_5:active{
+	background-image:url('../images/queue/5_active.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_5_pressed{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/5_voted.png');
+	float:left;
+}
+
+DIV#queue_container DIV.buton_queue_mid_5_pressed:hover{
+	background-image:url('../images/queue/5_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_5_pressed:active{
+	background-image:url('../images/queue/5_voted.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_6{
+	width:16px;
+	height:16px;
+	background-image:url('../images/queue/report.png');
+	float:left;
+
+}
+
+DIV#queue_container DIV.buton_queue_mid_6:hover{
+	background-image:url('../images/queue/report_hover.png');
+}
+
+DIV#queue_container DIV.buton_queue_mid_6:active{
+	background-image:url('../images/queue/report_active.png');
+}
+
+
+DIV#queue_container DIV#bottom_left {
+	width: 300px;
+	height:200px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#queue_left_container{
+	overflow-x:scroll;
+	overflow-y:hidden;
+	height:156px;
+}
+
+DIV#queue_container DIV#queue_left{
+	min-width: 300px;
+	overflow:hidden;
+	height:138px;
+	background-color:#CDCDCD;
+	background-image:url('../images/queue/shadow2.png');
+	background-repeat: repeat-x;
+}
+
+DIV#queue_container DIV#bottom_right {
+	width:auto;
+	height:200px;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#queue_right_container{
+	height:156px;
+	overflow-x:scroll;
+	overflow-y:hidden;
+	background-color:#CDCDCD;
+	background-image:url('../images/queue/shadow2.png');
+	background-repeat: repeat-x;
+}
+
+DIV#queue_container DIV#queue_right{
+	min-width: 100px;
+	height:138px;
+	overflow:hidden;
+	background-color:#CDCDCD;
+	background-image:url('../images/queue/shadow2.png');
+	background-repeat: repeat-x;
+}
+
+DIV#queue_container DIV#bottom_middle{
+	width: 216px;
+	height: 200px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#player_playmode{
+	width: 300px;
+	height:44px;
+}
+
+DIV#queue_container DIV#playmode_shuffle {
+	width: 35px;
+	height: 44px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#playmode_repeat {
+	width: 35px;
+	height: 44px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#VolumeSlider {
+	width: 100px;
+	height: 44px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV.player_playmode{
+    background-image: url("../images/buttons/button_background.png");
+    background-repeat: repeat-x;
+    height: 44px;
+}
+
+DIV#queue_container DIV.playmode_shuffle A.shuffle {
+	background-image: url("../images/buttons/shuffle.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.playmode_shuffle A.shuffle:hover {
+    background-image: url("../images/buttons/shuffle_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.playmode_shuffle A.shuffle:active {
+    background-image: url("../images/buttons/shuffle_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.playmode_repeat A.repeat {
+	background-image: url("../images/buttons/repeat.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.playmode_repeat A.repeat:hover {
+    background-image: url("../images/buttons/repeat_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.playmode_repeat A.repeat:active {
+    background-image: url("../images/buttons/repeat_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV#player_suggestionmode{
+	width: 100%;
+	height:44px;
+	overflow-x:hidden;
+	display:inline-block;
+}
+
+DIV#queue_container DIV#SeekSlider {
+	height: 44px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_normal {
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_discovery{
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_conservative {
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_off{
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_clear{
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_playlist{
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_friends{
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#suggestion_tops{
+	width: 35px;
+	height: 44px;
+	float:right;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV.player_suggestion{
+    background-image: url("../images/buttons/button_background.png");
+    background-repeat: repeat-x;
+    height: 44px;
+}
+
+DIV#queue_container DIV.suggestion_normal A.normal {
+	background-image: url("../images/buttons/N.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_normal A.normal:hover {
+    background-image: url("../images/buttons/N_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_normal A.normal:active {
+    background-image: url("../images/buttons/N_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_discovery A.discovery {
+	background-image: url("../images/buttons/D.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_discovery A.discovery:hover {
+    background-image: url("../images/buttons/D_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_discovery A.discovery:active {
+    background-image: url("../images/buttons/D_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_conservative A.conservative {
+	background-image: url("../images/buttons/C.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_conservative A.conservative:hover {
+    background-image: url("../images/buttons/C_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_conservative A.conservative:active {
+    background-image: url("../images/buttons/C_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_off A.normal {
+	background-image: url("../images/buttons/off.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_off A.normal:hover {
+    background-image: url("../images/buttons/off_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_off A.normal:active {
+    background-image: url("../images/buttons/off_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_clear A.normal {
+	background-image: url("../images/buttons/clear.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_clear A.normal:hover {
+    background-image: url("../images/buttons/clear_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_clear A.normal:active {
+    background-image: url("../images/buttons/clear_active.png");
+    border: 0 none;    
+}
+
+
+DIV#queue_container DIV.suggestion_playlist A.normal {
+	background-image: url("../images/buttons/playlist.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_playlist A.normal:hover {
+    background-image: url("../images/buttons/playlist_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_playlist A.normal:active {
+    background-image: url("../images/buttons/playlist_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_friends A.friends {
+	background-image: url("../images/buttons/friends.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_friends A.friends:hover {
+    background-image: url("../images/buttons/friends_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_friends A.friends:active {
+    background-image: url("../images/buttons/friends_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_tops A.tops {
+	background-image: url("../images/buttons/top.png");
+	border: 0 none;
+	display: block;
+	height: 44px;
+	width: 35px;
+}
+
+DIV#queue_container DIV.suggestion_tops A.tops:hover {
+    background-image: url("../images/buttons/top_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.suggestion_tops A.tops:active {
+    background-image: url("../images/buttons/top_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV#player_middle{
+	overflow:hidden;
+}	
+
+DIV#queue_container DIV#player_bottom{
+	overflow:hidden;
+}	
+
+DIV#queue_container DIV#player_top{
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#player_top_left{
+	width: 44px;
+	height: 44px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV#player_top_middle{
+	width: 128px;
+	height: 44px;
+	float:left;
+	overflow:hidden;
+	text-align:center;
+}
+
+DIV#queue_container DIV#player_top_right{
+	width: 44px;
+	height: 44px;
+	float:left;
+	overflow:hidden;
+
+}
+
+DIV#queue_container DIV#player_middle_left{
+	width: 44px;
+	height: 128px;
+	float:left;
+	overflow:hidden;
+
+}
+
+DIV#queue_container DIV#player_middle_middle{
+	width: 128px;
+	height: 128px;
+	background-color: #CDCDCD;
+	background-position: 1px 1px;
+	float:left;
+	overflow:hidden;
+	text-align:center;
+	position:relative;
+}
+
+DIV#queue_container DIV#player_middle_middle:hover DIV.song_container_buttons{
+    visibility: visible;
+}
+
+DIV#queue_container DIV.dummy_button{
+	width: 16px;
+	height: 16px;
+	float:left;
+    background-image:url('../images/queue/dummy.png');
+}
+
+DIV#queue_container DIV#player_middle_right{
+	width: 44px;
+	height: 128px;
+	float:left;
+	overflow:hidden;
+}
+
+DIV#queue_container DIV.player_top{
+    background-image: url("../images/buttons/button_background.png");
+    background-repeat: repeat-x;
+    height: 44px;
+}
+
+DIV#queue_container DIV.player_top A.stop {
+    background-image: url("../images/buttons/stop.png");
+    border: 0 none;
+    display: block;
+    height: 44px;
+    width: 44px;
+}
+
+DIV#queue_container DIV.player_top A.stop:hover {
+    background-image: url("../images/buttons/stop_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_top A.stop:active {
+    background-image: url("../images/buttons/stop_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_top A.play {
+    background-image: url("../images/buttons/play.png");
+    border: 0 none;
+    display: block;
+    height: 44px;
+    width: 128px;
+}
+
+DIV#queue_container DIV.player_top A.play:hover {
+    background-image: url("../images/buttons/play_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_top A.play:active {
+    background-image: url("../images/buttons/play_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_top A.pause {
+    background-image: url("../images/buttons/pause.png");
+    border: 0 none;
+    display: block;
+    height: 44px;
+    width: 128px;
+}
+
+DIV#queue_container DIV.player_top A.pause:hover {
+    background-image: url("../images/buttons/pause_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_top A.pause:active {
+    background-image: url("../images/buttons/pause_active.png");
+    border: 0 none;    
+}
+
+
+DIV#queue_container DIV.player_top A.replay {
+    background-image: url("../images/buttons/replay.png");
+    border: 0 none;
+    display: block;
+    height: 44px;
+    width: 44px;
+}
+
+DIV#queue_container DIV.player_top A.replay:hover {
+    background-image: url("../images/buttons/replay_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_top A.replay:active {
+    background-image: url("../images/buttons/replay_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_top A.replayActive {
+    background-image: url("../images/buttons/replay_active.png");
+    border: 0 none;
+    display: block;
+    height: 44px;
+    width: 44px;
+}
+
+DIV#queue_container DIV.player_top A.replayActive:hover {
+    background-image: url("../images/buttons/replay_hover.png");
+    border: 0 none;    
+}
+
+
+DIV#queue_container DIV.player_middle A.previous {
+    background-image: url("../images/buttons/bwd_background.png");
+    border: 0 none;
+    display: block;
+    height: 128px;
+    width: 44px;
+}
+
+DIV#queue_container DIV.player_middle A.previous:hover {
+    background-image: url("../images/buttons/bwd_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_middle A.previous:active {
+    background-image: url("../images/buttons/bwd_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_middle A.next {
+    background-image: url("../images/buttons/fwd_background.png");
+    border: 0 none;
+    display: block;
+    height: 128px;
+    width: 44px;
+}
+
+DIV#queue_container DIV.player_middle A.next:hover {
+    background-image: url("../images/buttons/fwd_hover.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV.player_middle A.next:active {
+    background-image: url("../images/buttons/fwd_active.png");
+    border: 0 none;    
+}
+
+DIV#queue_container DIV#player_bottom_middle{
+	bottom: 0px;
+	width: 216px;
+	height: 28px;
+	background-color:#CDCDCD;
+	text-align:center;
+
+}
+
+DIV#queue_container DIV .player_slider_container {
+	margin-right: 210px;
+	position: absolute;
+	overflow: hidden;
+	height: 44px;
+}
+
+DIV#panel-extended-playlists ul#playlist_vertical_column {
+    min-width:100px;  
+}
+
+
+DIV#queue_container img#player_cover_art 
+{
+    float:left;
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:4;    
+}

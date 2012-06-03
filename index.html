@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>MusicMachine</title>
+    <link type="text/css" href="css/app.css" rel="stylesheet" />
+    <link type="text/css" href="css/header_style.css" rel="stylesheet"/>
+	<link type="text/css" href="css/player.css" rel="stylesheet" />
+	<link type="text/css" href="css/custom-theme/jquery-ui-1.8.11.custom.css" rel="stylesheet" />
+	<link type="text/css" href="css/panel-ui.css" rel="stylesheet" />
+    <link type="text/css" href="css/gridview/style.css" rel="stylesheet" />
+    <link type="text/css" href="css/panel-home.css" rel="stylesheet" />
+    <link type="text/css" href="css/panel-myprofile.css" rel="stylesheet" />
+    <link type="text/css" href="css/panel-friends.css" rel="stylesheet" />
+    <link type="text/css" href="css/panel-tops.css" rel="stylesheet" />
+
+    
+	<script type="text/javascript" src="js/jquery-1.5.1.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.11.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ba-hashchange.js"></script>
+    <script type="text/javascript" src="js/imagePreloader.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+    <script type="text/javascript" src="js/shortcut.js"></script>
+    
+    <script src="js/AppLoader.js" type="text/javascript"></script>
+    <script src="js/UserAuth.js" type="text/javascript"></script>
+    <script src="js/Mm.js" type="text/javascript"></script>
+    <script src="js/url-framework.js" type="text/javascript"></script>
+	<script src="js/panel-ui.js" type="text/javascript"></script>
+    <script src="js/gridview/gridview.js" type="text/javascript"></script>
+	<script src="js/queue.js" type="text/javascript"></script>    
+    <script src="js/player.js" type="text/javascript"></script>
+    <script src="js/jquery.md5.js" type="text/javascript"></script>
+    <script src="js/recommend.js" type="text/javascript"></script>
+    
+
+    <script src="js/panels/home.js" type="text/javascript"></script>
+    <script src="js/panels/playlists.js" type="text/javascript"></script>
+    <script src="js/panels/lyrics.js" type="text/javascript"></script>
+    <script src="js/panels/suggestions.js" type="text/javascript"></script>
+    <script src="js/panels/search.js" type="text/javascript"></script>
+    <script src="js/panels/myprofile.js" type="text/javascript"></script>
+    <script src="js/panels/moderator.js" type="text/javascript"></script>
+    <script src="js/panels/friends.js" type="text/javascript"></script>
+    <script src="js/panels/upload.js" type="text/javascript"></script>
+    <script src="js/panels/topmusic.js" type="text/javascript"></script>
+    <script src="js/panels/reportSong.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+    <script type ="text/javascript">
+        AC_FL_RunContent(
+		'codebase', 'http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10',
+		'width', '0',
+		'height', '0',
+		'src', 'flash/player',
+		'quality', 'high',
+		'pluginspage', 'http://www.adobe.com/go/getflashplayer',
+		'align', 'middle',
+		'play', 'true',
+		'loop', 'true',
+		'scale', 'showall',
+		'wmode', 'window',
+		'devicefont', 'false',
+		'id', 'playerTest',
+		'bgcolor', '#ffffff',
+		'name', 'player',
+		'menu', 'true',
+		'allowFullScreen', 'false',
+		'allowScriptAccess', 'sameDomain',
+		'movie', 'flash/player',
+		'salign', ''
+		); //end AC code
+    </script>
+
+    <div id="app_container">
+
+        <!-- Flash embedding -->
+          <noscript>
+            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10"
+                width="1" height="1" id="playerTest" >
+                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="allowFullScreen" value="false" />
+                <param name="movie" value="flash/player.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#ffffff" />                
+                <embed  src="flash/player.swf" quality="high" bgcolor="#ffffff" width="1" height="1"
+                    name="player"  align="middle" allowscriptaccess="sameDomain" allowfullscreen="false"
+                    type="application/x-shockwave-flash" pluginspage="http://www.adobe.com/go/getflashplayer" />
+            </object>
+        </noscript>
+        <!-- Flash embedding-->
+
+        <!-- Flash embedding   the smart way, dar nu merge
+        <div id="flashContent">
+			<a href="http://www.adobe.com/go/getflash">
+				<img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+			</a>
+			<p>This page requires Flash Player version 10.0.2 or higher.</p>
+		</div>
+        Flash embedding -->
+
+
+        <div id="header">
+            <img id ="image_header" src="images/imagine_header2.png" alt="" />
+            <img id="ajax_loading_img" src="images/ajax-loader.gif" alt="" />
+	        <div id="header_search">
+		        <input id="searchbox" type="text" size="50" />
+		        <select id="search_options">
+                    <option>Songs</option>
+			        <option>Users</option>
+			        <option>Lyrics</option>
+		        </select>
+		        <input type="button" class="button" value="Search" onclick="search.generalButton()" />
+	        </div>
+	        <div id="header_user_status">
+		        <div>Hello, <span id="header_current_user_first_name">Mihai</span></div>
+		        <a href="javascript:void(0)" id="header_logout_link">Logout</a>
+	        </div>
+        </div>
+    
+        <div id="panels_container"></div>
+
+        <div id="queue_container">
+		    <div id="bottom_left">
+			    <div id="player_playmode" class="player_playmode">
+				    <div id="playmode_shuffle" class="playmode_shuffle"><a id="SuffleAnchor" class="shuffle" title="Shuffle songs that come from playlists" href="javascript:void(0)" onclick="SetPlayMode('shuffle');"></a></div>
+				    <div id="playmode_repeat" class="playmode_repeat"><a id="RepeatAnchor" class="repeat" title="Repeat from playlist" href="javascript:void(0)" onclick="SetPlayMode('repeat');"></a></div>
+				    <div id="VolumeSliderS" style="width: 200px; float:left; margin-left:13px; margin-top:15px;" title="Volume" ></div>
+			    </div>
+			    <div id="queue_left_container" class="queue_sortable">
+				    <div id="queue_left"></div>
+			    </div>
+		    </div>
+		    <div id="bottom_middle">
+			    <div id="player_top" class="player_top">
+				    <div id="player_top_left"><a id="StopAnchor" class="stop" href="javascript:void(0)" onclick="MusicPlayer.stop();" title="Stop Song" ></a></div>
+				    <div id="player_top_middle"><a id="PlayAnchor" class="play"  href="javascript:void(0)" onclick="MusicPlayer.play();" title="Play/Pause Song"></a></div>
+				    <div id="player_top_right"><a id="ReplayAnchor" class="replay"  href="javascript:void(0)" onclick="MusicPlayer.replayButton();" title="Loop Song" ></a></div>
+			    </div>
+			    <div id="player_middle" class="player_middle">
+				    <div id="player_middle_left" ><a id="PreviousAnchor" class="previous" href="javascript:void(0)" onclick="MusicPlayer.previous();" title="Previous Song"></a>
+                    
+                    <div id="player_current_seconds"  style="text-align:center; position:relative; width:44px; float:left; z-index:10;" ></div>
+                    
+                    </div>
+				    <div id="player_middle_middle" class="cover_art">
+				    </div>
+				    <div id="player_middle_right" ><a id="NextAnchor" class="next" href="javascript:void(0)" onclick="MusicPlayer.finishedSong(0);" title="Next Song" ></a>
+                    
+                    <div id="player_total_seconds"  style="text-align:center; position:relative; width:44px; float:left; z-index:10" ></div>
+                    
+                    </div>
+			    </div>
+			    <div id="player_bottom">
+    			    <div id="player_bottom_middle" title=""></div>
+			    </div>
+		    </div>
+		    <div id="bottom_right">
+			    <div id="player_suggestionmode" class="player_suggestion">
+				    <div id="SeekSlider">
+                        
+                        <div class="player_slider_container">
+                                
+                                <div id="SeekSliderS"  style="width:200px; float:left; margin-left:13px; margin-top:15px;" title="Seeker" ></div>
+                                
+                        </div>
+                        
+                    </div>
+
+                    <div id="suggestion_clear" class="suggestion_clear"><a id="ClearAnchor" class="normal" href="javascript:void(0)" onclick="SetPlayMode('clear');" title="Clear Queue"></a></div>
+				    <div id="suggestion_tops" class="suggestion_tops"><a id="TopsAnchor" class="tops" href="javascript:void(0)" onclick="SetPlayMode('top');" title="Suggest From Top Listened"></a></div>
+				    <div id="suggestion_friends" class="suggestion_friends"><a id="FriendsAnchor" class="friends" href="javascript:void(0)" onclick="SetPlayMode('friends');" title="Suggest From Friends" ></a></div>
+				    <div id="suggestion_conservative" class="suggestion_conservative"><a id="ConservativeAnchor" class="conservative" href="javascript:void(0)" onclick="SetPlayMode('conservative');" title="Suggest - Conservative"></a></div>
+				    <div id="suggestion_discovery" class="suggestion_discovery"><a id="DiscoveryAnchor" class="discovery" href="javascript:void(0)" onclick="SetPlayMode('discovery');" title="Suggest - Discovery"></a></div>
+				    <div id="suggestion_normal" class="suggestion_normal"><a id="NormalAnchor" class="normal" href="javascript:void(0)" onclick="SetPlayMode('normal');" title="Suggest - Normal"></a></div>
+                    <div id="suggestion_playlist" class="suggestion_playlist"> <a id="PlaylistAnchor" class="normal" href="javascript:void(0)" onclick="SetPlayMode('playlist');"  title="Suggest From Current Playlist "></a></div>
+                    <div id="suggestion_off" class="suggestion_off"><a id="OffAnchor" class="normal" href="javascript:void(0)" onclick="SetPlayMode('off');" title="Disable Suggestions"></a></div>
+
+			    </div>
+			    <div id="queue_right_container">
+				    <div id="queue_right" class="queue_sortable"></div>
+			    </div>
+		    </div>
+	    </div>
+    </div>
+</body>
+</html>

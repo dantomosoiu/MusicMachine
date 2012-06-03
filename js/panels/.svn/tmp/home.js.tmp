@@ -1,0 +1,138 @@
+﻿function showup(x, content) {
+    document.getElementById(x).innerHTML = content + ' <br /> ' +
+        '<a href="javascript:void(0)"> View shoutbox </div>' ;
+}
+
+function HomeClass() {
+
+    this.__load = function () {
+        Panels.extend('home');
+    }
+
+    this.index = function () {
+        
+    }
+
+    // aceasta functie trebuie apelata cu id-ul user-ului curent de fiecare data cand se da click pe Home panel
+    this.getLatestNews = function (User_Id) {
+        $.post("LatestNews.ashx", { UserId: User_Id+'' }, function (response) {
+            if (Mm.checkAppState(response) == true) {
+                var text_html = '';
+                for (i = 0; i < response.length; i++) {
+                    text_html += '<p class = "latestNewsEntry_container" >\n ';
+                    var eventType = response[i].EventType;
+                    var eventDate = response[i].EventDate;
+
+                    if (eventType == "friend_request") {
+                        // construiesc o intrare in Latest News de tip cerere de prietenie
+                        var status = response[i].Event.Status;
+                        var friendId = response[i].Event.Sender.UserId;
+                        // id-ul userului care a facut cererea de prietenie
+
+                        if (status == "accepted") {
+                            //daca cererea a fost acceptata
+                            text_html += 'You are now friends with <a href="javascript:void(0)">' +
+                                response[i].Event.Sender.FirstName + ' ' + response[i].Event.Sender.LastName + ' </a>' +
+                                eventDate + ' <br /> ' +
+                                '<a href="javascript:void(0)"> View profile </a>';
+                        }
+                        else {
+                            //cererea este in starea pending
+                            text_html += '<a href="javascript:void(0)">' +
+                                response[i].Event.Sender.FirstName + ' ' + response[i].Event.Sender.LastName +
+                                ' </a> added you as a friend ' + eventDate + ' <br /> ' +
+                                '<a href="javascript:void(0)"> View profile </a> - ' +
+                                '<a href="javascript:void(0)"> Accept </a> - <a href="javascript:void(0)"> Decline </a> ';
+                        }
+                    }
+                    else
+                        if (eventType == "recommendation") {
+                            // construiesc o intrare in Latest News de tip recomandarea unei melodii
+                            var receiverId = response[i].Event.Receiver.UserId; // id-ul celui caruia i-a fost recomandata piesa
+                            var senderId = response[i].Event.Sender.UserId; //id-ul celui care a recomandat piesa
+
+                            if (receiverId == User_Id) {
+                                text_html += '<a href="javascript:void(0)">' +
+                                response[i].Event.Sender.FirstName + ' ' + response[i].Event.Sender.LastName +
+                                ' </a> recommended you a song ' + eventDate + ' <br /> ' +
+                                response[i].Event.Song.Artists + ' - ' + response[i].Event.Song.SongName +
+                                '<br /> <a href="javascript:void(0)">  Add to queue </a> ';
+                            }
+                            else {
+                                text_html += '<a href="javascript:void(0)">' +
+                                response[i].Event.Sender.FirstName + ' ' + response[i].Event.Sender.LastName + ' </a> recommended ' +
+                                '<a href="javascript:void(0)">' + response[i].Event.Receiver.FirstName + ' '
+                                 + response[i].Event.Receiver.LastName + '</a>' +
+                                ' a song ' + eventDate + ' <br /> ' +
+                                response[i].Event.Song.Artists + ' - ' + response[i].Event.Song.SongName +
+                                '<br /> <a href="javascript:void(0)">  Add to queue </a> ';
+                            }
+                        }
+                        else
+                            if (eventType == "shoutbox_message") {
+                                var senderId = response[i].Event.Sender.UserId; //id-ul celui care a postat pe shoutbox
+                                var content = response[i].Event.Body; //continutul mesajului
+                                text_html += '<a href="javascript:void(0)">' +
+                                response[i].Event.Sender.FirstName + ' ' + response[i].Event.Sender.LastName + '</a> ' +
+                                'posted on your shoutbox ' + response[i].EventDate + ' <br />' +
+                                response[i].Event.Title +
+                                '<br /><span id = "' + i + '" > ' + response[i].Event.Body.substring(0, 25) + ' ... <br /> ' +
+                                '<a href="javascript:showup(' + i + ', \'' + content + '\')">View message</a> - ' +
+                                '<a href="javascript:void(0)"> View shoutbox </a> </span>';
+                            }
+                    text_html += '</p>\n';
+                }
+                $('div.latestNews').html(text_html);
+            }
+        }, 'json');
+    }
+};
+
+var home = null;
+var panelHome = new Panel('Home', 'home', false);
+
+panelHome.setExtendedHtml('<div class="column"><h4>Social</h4>\n\
+								<ul>\n\
+									<li><a href="javascript:void(0)">My Profile</a></li>\n\
+									<li><a href="javascript:void(0)">Friends</a></li>\n\
+								</ul>\n\
+								<h4>Music</h4>\n\
+								<ul>\n\
+									<li><a href="javascript:void(0)">My Song History</a></li>\n\
+									<li><a href="javascript:void(0)">Top Music</a></li>\n\
+									<li><a href="javascript:void(0)">Suggestions</a></li>\n\
+									<li><a href="javascript:void(0)">Lyrics</a></li>\n\
+								</ul></div>\n\
+                                <div class="column">\n\
+                                <div class="scroll_vertical">\n\
+								<h4>Latest news</h4>\n\
+                                <div class="latestNews" >\
+                                <p>\n\
+									Silviu added you as a friend (23 March)<br>\n\
+									<a href="javascript:void(0)">View profile</a> - <a href="javascript:void(0)">Accept friend</a>\n\
+								</p>\n\
+								<p>\n\
+									Bogdan wrote on your Shoutbox (22 March)<br>\n\
+									<a href="javascript:void(0)">View message</a>\n\
+								</p>\n\
+<<<<<<< .mine
+								</div></div>\n\
+=======
+                                </div>\
+                                </div>\n\
+>>>>>>> .r25
+');
+
+panelHome.setCompactedHtml('<h4>Social</h4>\n\
+								<ul>\n\
+									<li><a href="javascript:void(0)">My Profile</a></li>\n\
+									<li><a href="javascript:void(0)">Friends</a></li>\n\
+								</ul>\n\
+								<h4>Music</h4>\n\
+								<ul>\n\
+									<li><a href="javascript:void(0)">My Song History</a></li>\n\
+									<li><a href="javascript:void(0)">Top Music</a></li>\n\
+									<li><a href="javascript:void(0)">Suggestions</a></li>\n\
+									<li><a href="javascript:void(0)">Lyrics</a></li>\n\
+								</ul>\n\
+');

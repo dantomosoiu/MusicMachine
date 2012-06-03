@@ -1,0 +1,79 @@
+
+#myprofile_infoTable td{
+padding: 3px;
+}
+
+#myprofile_infoTable {
+	background-color: #f2f2f2;
+	min-width: 300px;
+	padding: 10px;
+	}
+	
+	#myprofile_infoTable tr td:first-child 
+	{
+	    width: 120px;
+	}
+
+#myprofile_infoTable tr td:first-child {
+	vertical-align: top;
+}
+
+#myprofile_infoTable td span {
+	display: block;
+	padding: 4px;
+}
+
+input{
+	border: 1px solid black;
+	margin: 1px 0px;
+	padding: 2px;
+}
+
+.myprofile_genres .myprofile_input, .myprofile_artists .myprofile_input {
+	display: block;
+}
+
+.myprofile_info {
+	font-size: 12px;
+	padding: 2px 5px;
+	}
+	
+.myprofile_input {
+	font-size: 12px;
+	font-family: Tahoma;
+	}
+	
+.myprofile_sex.myprofile_info 
+{
+    margin: 1px;
+}
+
+
+#myprofile_passwordError 
+{
+    margin: 5px 0px;
+    color: Red;
+}
+
+#myprofile_passwordSuccess
+{
+    margin: 5px 0px;
+    color: Green;
+}
+
+#myprofile_header 
+{
+    padding: 0px 0px 5px 0px;
+    border-bottom: 1px solid gray;
+}
+
+#myprofile_songs input, #myprofile_artists input, #myprofile_genres input 
+{
+    display: block;
+    margin: 1px 0px 2px 0px;
+    }
+    
+ #myprofile_shoutbox_textarea 
+{
+    border: 1px solid gray;
+}
